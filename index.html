@@ -10,14 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+  <link rel="icon" href="assets/logo/logo.svg" type="image/svg+xml" />
 </head>
 <body>
   <!-- Header -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#hero" class="logo">
-        <span class="logo__mark">ЛК</span>
+        <img class="logo__img" src="assets/logo/logo.png" width="48" height="48" alt="Лазерная клиника" />
         <span class="logo__text">
           <strong>Лазерная клиника</strong>
           <small>Душанбе</small>
@@ -147,8 +147,11 @@
       <div class="container about">
         <div class="about__visual">
           <div class="about__frame">
-            <div class="about__badge">ЛК</div>
-            <p class="about__quote">«Предлагаем только то, что нужно вашей коже — ничего лишнего.»</p>
+            <img src="assets/clinic/interior.jpg" alt="Интерьер Лазерной клиники" class="about__photo" />
+            <div class="about__overlay">
+              <img src="assets/logo/logo.png" alt="" class="about__badge-logo" width="64" height="64" />
+              <p class="about__quote">«Предлагаем только то, что нужно вашей коже — ничего лишнего.»</p>
+            </div>
           </div>
         </div>
         <div class="about__content">
@@ -164,6 +167,11 @@
             и индивидуальный подбор процедур — чтобы результат был заметным,
             а визит — комфортным.
           </p>
+          <div class="about__gallery">
+            <img src="assets/clinic/logo-wall.jpg" alt="Логотип клиники" />
+            <img src="assets/team/team-stairs.jpg" alt="Команда Лазерной клиники" />
+            <img src="assets/clinic/sign.jpg" alt="Вывеска Лазерной клиники" />
+          </div>
           <div class="about__points">
             <div class="point">
               <strong>Комфорт</strong>
@@ -190,27 +198,30 @@
           <h2>Врачи и специалисты</h2>
           <p class="section__desc">Пациенты особенно отмечают внимательность и профессионализм наших докторов.</p>
         </div>
+        <div class="team-banner">
+          <img src="assets/team/team-reception.jpg" alt="Команда на ресепшене" />
+        </div>
         <div class="doctors-grid">
           <article class="doctor-card">
-            <div class="doctor-card__avatar">М</div>
+            <img class="doctor-card__photo" src="assets/team/staff-madina.jpg" alt="Доктор Мадина" />
             <h3>Доктор Мадина</h3>
             <p class="doctor-card__role">Дерматокосметолог</p>
             <p>Инъекционная и уходовая косметология. Пациенты ценят точные рекомендации и бережный подход.</p>
           </article>
           <article class="doctor-card">
-            <div class="doctor-card__avatar">Д</div>
+            <img class="doctor-card__photo" src="assets/team/staff-jamiya.jpg" alt="Джамиля Низомитдиновна" />
             <h3>Джамиля Низомитдиновна</h3>
             <p class="doctor-card__role">Врач-косметолог</p>
             <p>Лазерные и эстетические процедуры. Высокая квалификация и аккуратная работа.</p>
           </article>
           <article class="doctor-card">
-            <div class="doctor-card__avatar">Ш</div>
+            <img class="doctor-card__photo" src="assets/team/staff-shahnoza.jpg" alt="Доктор Шахноза" />
             <h3>Доктор Шахноза</h3>
             <p class="doctor-card__role">Дерматокосметолог</p>
             <p>Индивидуальный подбор ухода и процедур под задачи кожи пациента.</p>
           </article>
           <article class="doctor-card">
-            <div class="doctor-card__avatar">С</div>
+            <img class="doctor-card__photo" src="assets/team/staff-sabohat.jpg" alt="Сабохат" />
             <h3>Сабохат</h3>
             <p class="doctor-card__role">Администратор</p>
             <p>Тёплая встреча, запись на удобное время и забота о каждом госте клиники.</p>
@@ -396,7 +407,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="logo__mark">ЛК</span>
+        <img class="logo__img" src="assets/logo/logo.png" width="42" height="42" alt="Лазерная клиника" />
         <div>
           <strong>Лазерная клиника</strong>
           <p>Лазерная эпиляция и косметология в Душанбе</p>
