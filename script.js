@@ -15,20 +15,37 @@ const onScroll = () => {
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
+const setMenuOpen = (open) => {
+  if (!navToggle || !mobileNav) return;
+  navToggle.setAttribute("aria-expanded", String(open));
+  mobileNav.classList.toggle("is-open", open);
+  mobileNav.hidden = !open;
+};
+
 if (navToggle && mobileNav) {
+  mobileNav.hidden = true;
+
   navToggle.addEventListener("click", () => {
     const open = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!open));
-    mobileNav.hidden = open;
+    setMenuOpen(!open);
   });
 
   mobileNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navToggle.setAttribute("aria-expanded", "false");
-      mobileNav.hidden = true;
-    });
+    link.addEventListener("click", () => setMenuOpen(false));
   });
 }
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const id = link.getAttribute("href");
+    if (!id || id === "#") return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.pushState(null, "", id);
+  });
+});
 
 const revealItems = document.querySelectorAll(".reveal");
 
