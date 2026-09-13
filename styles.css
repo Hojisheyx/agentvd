@@ -1,15 +1,18 @@
 :root {
-  --bg: #e7eeea;
-  --bg-deep: #d7e3dc;
-  --surface: #f4f8f5;
-  --ink: #14211c;
-  --muted: #53665d;
-  --line: rgba(20, 33, 28, 0.12);
-  --accent: #24574a;
-  --accent-soft: #9fbfb0;
-  --sand: #d8c4a8;
-  --hero-text: #f7faf8;
-  --shadow: 0 24px 60px rgba(20, 33, 28, 0.12);
+  /* Brand colors from clinic interior: magenta neon, blush pink, burgundy uniforms */
+  --bg: #f8eef1;
+  --bg-deep: #f0dce3;
+  --surface: #fff7f9;
+  --ink: #2a1520;
+  --muted: #7a5a66;
+  --line: rgba(42, 21, 32, 0.12);
+  --accent: #c2185b;
+  --accent-deep: #8e1243;
+  --accent-soft: #e8a0b8;
+  --burgundy: #6b1f32;
+  --sand: #e8d0c8;
+  --hero-text: #fff7f9;
+  --shadow: 0 24px 60px rgba(107, 31, 50, 0.14);
   --radius: 1.25rem;
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Manrope", "Segoe UI", sans-serif;
@@ -32,9 +35,9 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(1200px 700px at 8% -10%, rgba(159, 191, 176, 0.45), transparent 55%),
-    radial-gradient(900px 600px at 100% 8%, rgba(216, 196, 168, 0.28), transparent 50%),
-    linear-gradient(180deg, var(--bg) 0%, var(--surface) 42%, #eef4f0 100%);
+    radial-gradient(1200px 700px at 8% -10%, rgba(232, 160, 184, 0.4), transparent 55%),
+    radial-gradient(900px 600px at 100% 8%, rgba(194, 24, 91, 0.1), transparent 50%),
+    linear-gradient(180deg, var(--bg) 0%, var(--surface) 42%, #fff5f8 100%);
   line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
@@ -113,14 +116,14 @@ p {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(14px);
-  background: rgba(244, 248, 245, 0.78);
+  background: rgba(255, 247, 249, 0.78);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 
 .site-header.is-scrolled {
   border-bottom-color: var(--line);
-  background: rgba(244, 248, 245, 0.92);
+  background: rgba(255, 247, 249, 0.92);
 }
 
 .header-inner {
@@ -150,7 +153,7 @@ p {
   display: grid;
   place-items: center;
   background: var(--accent);
-  color: #f4f8f5;
+  color: #fff7f9;
   font-family: var(--font-display);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
@@ -214,7 +217,7 @@ p {
   gap: 0.35rem;
   padding: 0.5rem 1rem 1.1rem;
   border-top: 1px solid var(--line);
-  background: rgba(244, 248, 245, 0.98);
+  background: rgba(255, 247, 249, 0.98);
 }
 
 .mobile-nav.is-open {
@@ -256,8 +259,8 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(12, 24, 20, 0.18) 0%, rgba(12, 24, 20, 0.28) 38%, rgba(12, 24, 20, 0.72) 100%),
-    linear-gradient(90deg, rgba(12, 24, 20, 0.45) 0%, rgba(12, 24, 20, 0.12) 55%, transparent 100%);
+    linear-gradient(180deg, rgba(42, 21, 32, 0.22) 0%, rgba(42, 21, 32, 0.32) 38%, rgba(42, 21, 32, 0.78) 100%),
+    linear-gradient(90deg, rgba(107, 31, 50, 0.5) 0%, rgba(42, 21, 32, 0.15) 55%, transparent 100%);
 }
 
 .hero-content {
@@ -279,7 +282,7 @@ p {
 .hero-lead {
   max-width: 34ch;
   font-size: 1.05rem;
-  color: rgba(247, 250, 248, 0.86);
+  color: rgba(255, 247, 249, 0.88);
 }
 
 .hero-actions {
@@ -306,7 +309,7 @@ p {
 }
 
 .btn-primary {
-  background: #f4f8f5;
+  background: #fff7f9;
   color: var(--accent);
 }
 
@@ -315,13 +318,13 @@ p {
 }
 
 .btn-ghost {
-  border: 1px solid rgba(244, 248, 245, 0.55);
-  color: #f4f8f5;
+  border: 1px solid rgba(255, 247, 249, 0.55);
+  color: #fff7f9;
 }
 
 .btn-ghost:hover {
-  border-color: #f4f8f5;
-  background: rgba(244, 248, 245, 0.08);
+  border-color: #fff7f9;
+  background: rgba(255, 247, 249, 0.08);
 }
 
 .section {
@@ -496,22 +499,22 @@ p {
 }
 
 .contact .btn-ghost {
-  border-color: rgba(20, 33, 28, 0.2);
+  border-color: rgba(42, 21, 32, 0.2);
   color: var(--ink);
 }
 
 .contact .btn-ghost:hover {
   border-color: var(--ink);
-  background: rgba(20, 33, 28, 0.04);
+  background: rgba(194, 24, 91, 0.06);
 }
 
 .contact .btn-primary {
   background: var(--accent);
-  color: #f4f8f5;
+  color: #fff7f9;
 }
 
 .contact .btn-primary:hover {
-  background: #1b463c;
+  background: var(--accent-deep);
 }
 
 .contact-details {
@@ -537,7 +540,7 @@ p {
 .contact-details a {
   color: var(--ink);
   font-weight: 600;
-  border-bottom: 1px solid rgba(20, 33, 28, 0.2);
+  border-bottom: 1px solid rgba(42, 21, 32, 0.2);
 }
 
 .site-footer {
