@@ -229,7 +229,7 @@ p {
   gap: 0.3rem;
 }
 
-.nav-toggle span {
+.nav-toggle span:not(.sr-only) {
   width: 1.2rem;
   height: 1.8px;
   background: var(--accent);
@@ -652,15 +652,25 @@ p {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
   transition-delay: calc(var(--i, 0) * 70ms);
 }
 
-.reveal.is-visible {
+html.js .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+.section[id],
+.hero[id] {
+  scroll-margin-top: 6rem;
 }
 
 @keyframes spin {
