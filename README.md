@@ -1,31 +1,22 @@
 # Лазерная клиника — сайт
 
-Одностраничный сайт клиники лазерной эпиляции и косметологии в Душанбе  
-([@lasernaya_clinica](https://www.instagram.com/lasernaya_clinica)).
+## Рабочая ссылка
 
-## Что внутри
+**https://lazernayaklinika.tiiny.site**
 
-- Главный экран с призывом к записи
-- Блок услуг (эпиляция, лазерная и инъекционная косметология, дерматология)
-- О клинике и команда
-- Отзывы пациентов
-- Форма записи с переходом в WhatsApp
-- Контакты и карта
-- Адаптивная вёрстка (мобильные / планшет / десктоп)
+Резерв: https://eos-utc-mai-polls.trycloudflare.com
 
-## Запуск
+## Постоянный хостинг (GitHub Pages)
 
-Откройте `index.html` в браузере или поднимите локальный сервер:
+1. Откройте https://github.com/Hojisheyx/agentvd/settings/pages
+2. Source → Deploy from a branch
+3. Branch: `main`, folder: `/docs`
+4. Save
+
+После этого сайт будет на: https://hojisheyx.github.io/agentvd/
+
+## Локальный запуск
 
 ```bash
 python3 -m http.server 8080
 ```
-
-Сайт будет доступен по адресу: http://localhost:8080
-
-## Контакты клиники
-
-- **Адрес:** Душанбе, махалла Дехи Боло, 185
-- **Телефон:** +992 777 112 355
-- **Instagram:** [@lasernaya_clinica](https://www.instagram.com/lasernaya_clinica)
-- **Часы работы:** ежедневно 09:00–19:00
