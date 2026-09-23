@@ -323,6 +323,8 @@ p { margin: 0; }
   transition: transform 0.9s var(--ease);
   will-change: transform;
 }
+.route__card:nth-child(1) img { object-position: center 40%; filter: saturate(1.15) contrast(1.08); }
+.route__card:nth-child(2) img { object-position: center 15%; }
 .route__card:hover img { transform: scale(1.1); }
 .route__card::after {
   content: "";
