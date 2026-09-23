@@ -1,428 +1,208 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="tg">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Лазерная клиника в Душанбе — лазерная эпиляция, косметология и дерматология. Профессиональный уход за кожей. Дехи Боло, 185." />
-  <meta name="keywords" content="лазерная эпиляция, косметология, Душанбе, лазерная клиника, биоревитализация, пилинг" />
-  <title>Лазерная клиника — Лазерная эпиляция и косметология | Душанбе</title>
+  <meta name="description" content="Business Camp — саёҳат, бизнес ва истиқбол. 5 кишвар, 21 рӯз, 50 соҳибкор. 25 ноябр — 15 декабр 2026." />
+  <meta name="theme-color" content="#06281c" />
+  <title>Business Camp — Саёҳат · Бизнес · Истиқбол</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="assets/logo/logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2306281c'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' font-family='Arial' font-weight='700' fill='%23b8f035'%3EBC%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#hero" class="logo">
-        <img class="logo__img" src="assets/logo/logo.png" width="48" height="48" alt="Лазерная клиника" />
-        <span class="logo__text">
-          <strong>Лазерная клиника</strong>
-          <small>Душанбе</small>
-        </span>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <p class="topbar__stats">5 КИШВАР · 21 РӮЗ · 50 СОҲИБКОР</p>
+      <a class="topbar__ig" href="https://instagram.com/yadgarov_dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram @yadgarov_dev">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+        </svg>
+        <span>@yadgarov_dev</span>
       </a>
-      <nav class="nav" id="nav">
-        <a href="#services" class="nav__link">Услуги</a>
-        <a href="#about" class="nav__link">О клинике</a>
-        <a href="#doctors" class="nav__link">Врачи</a>
-        <a href="#reviews" class="nav__link">Отзывы</a>
-        <a href="#contacts" class="nav__link">Контакты</a>
-      </nav>
-      <a href="#booking" class="btn btn--primary header__cta">Записаться</a>
-      <button class="burger" id="burger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero" id="hero">
-      <div class="hero__bg"></div>
-      <div class="container hero__content">
-        <p class="eyebrow fade-up">Лазерная эпиляция · Косметология · Дерматология</p>
-        <h1 class="fade-up delay-1">Красота вашей кожи —<br />наша забота</h1>
-        <p class="hero__lead fade-up delay-2">
-          Современная клиника лазерной косметологии в Душанбе.
-          Безопасные процедуры, опытные врачи и результат, который видно.
-        </p>
-        <div class="hero__actions fade-up delay-3">
-          <a href="#booking" class="btn btn--primary btn--lg">Записаться на приём</a>
-          <a href="#services" class="btn btn--ghost btn--lg">Смотреть услуги</a>
+      <div class="hero__collage" aria-hidden="true">
+        <div class="hero__panel" style="--i:0">
+          <img src="assets/cities/tashkent.jpg" alt="" />
         </div>
-        <div class="hero__stats fade-up delay-4">
-          <div class="stat">
-            <strong>5.0</strong>
-            <span>рейтинг клиентов</span>
-          </div>
-          <div class="stat">
-            <strong>09:00–19:00</strong>
-            <span>ежедневно</span>
-          </div>
-          <div class="stat">
-            <strong>Дехи Боло, 185</strong>
-            <span>район Сино</span>
-          </div>
+        <div class="hero__panel" style="--i:1">
+          <img src="assets/cities/kualalumpur.jpg" alt="" />
+        </div>
+        <div class="hero__panel" style="--i:2">
+          <img src="assets/cities/bali.jpg" alt="" />
+        </div>
+        <div class="hero__panel" style="--i:3">
+          <img src="assets/cities/singapore.jpg" alt="" />
+        </div>
+        <div class="hero__panel" style="--i:4">
+          <img src="assets/cities/hochiminh.jpg" alt="" />
+        </div>
+      </div>
+      <div class="hero__veil"></div>
+
+      <div class="hero__content">
+        <h1 class="hero__brand reveal">
+          <span class="hero__brand-business">BUSINESS</span>
+          <span class="hero__brand-camp">CAMP</span>
+        </h1>
+        <p class="hero__tagline reveal delay-1">САЁҲАТ · БИЗНЕС · ИСТИҚБОЛ</p>
+        <p class="hero__lead reveal delay-2">Бозорҳои нав. Имкониятҳои воқеӣ. Соҳибкории муваффақ.</p>
+        <div class="hero__actions reveal delay-3">
+          <a class="btn btn--primary" href="#register">
+            Барои иштирок сабти ном намоед
+            <svg class="btn__plane" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <svg class="hero__flight" viewBox="0 0 400 80" fill="none" aria-hidden="true">
+        <path class="hero__flight-path" d="M10 55 C 90 10, 180 70, 280 30 S 370 20, 390 35" stroke="currentColor" stroke-width="2" stroke-dasharray="6 8"/>
+        <g class="hero__flight-plane">
+          <path d="M0 0 L14 -4 L18 0 L14 4 Z" fill="currentColor"/>
+        </g>
+      </svg>
+    </section>
+
+    <section class="section mentors" id="mentors">
+      <div class="container mentors__grid">
+        <figure class="mentors__photo mentors__photo--left reveal">
+          <img src="assets/camp/flyer.jpg" alt="Менторҳои Business Camp" />
+        </figure>
+        <div class="mentors__copy reveal delay-1">
+          <p class="eyebrow">Менторҳо</p>
+          <h2>Меҳрубон Саидакбари</h2>
+          <p class="mentors__tags">Бизнес · Таҷриба · Нетворкинг · Бозорҳои нав</p>
+          <blockquote>
+            «Бозорҳои нав. Имкониятҳои воқеӣ. Соҳибкории муваффақ.»
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="section" id="services">
+    <section class="section features" id="features">
       <div class="container">
-        <div class="section__head">
-          <p class="eyebrow">Что мы делаем</p>
-          <h2>Услуги клиники</h2>
-          <p class="section__desc">Комплексный уход: от лазерной эпиляции до инъекционной и аппаратной косметологии.</p>
+        <div class="section__head reveal">
+          <p class="eyebrow">Чӣ мегиред</p>
+          <h2>Як сафар — чор натиҷа</h2>
         </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-card__icon">⚡</div>
-            <h3>Лазерная эпиляция</h3>
-            <p>Эффективное и безопасное удаление нежелательных волос на лице и теле на современном оборудовании.</p>
-            <ul>
-              <li>Лицо и зоны тела</li>
-              <li>Минимум дискомфорта</li>
-              <li>Курс с видимым результатом</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <div class="service-card__icon">✨</div>
-            <h3>Лазерная косметология</h3>
-            <p>Коррекция постакне, шрамов, пигментации и улучшение качества кожи лазерными методиками.</p>
-            <ul>
-              <li>Лечение постакне</li>
-              <li>Удаление перманента</li>
-              <li>Выравнивание тона</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <div class="service-card__icon">💧</div>
-            <h3>Инъекционная косметология</h3>
-            <p>Биоревитализация и уходовые инъекции для глубокого увлажнения и омоложения кожи.</p>
-            <ul>
-              <li>Биоревитализация</li>
-              <li>Индивидуальный протокол</li>
-              <li>Без лишних назначений</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <div class="service-card__icon">🌸</div>
-            <h3>Уход и чистка лица</h3>
-            <p>Профессиональные чистки, пилинги и подбор косметики под ваш тип кожи.</p>
-            <ul>
-              <li>Чистка лица</li>
-              <li>Жёлтый пилинг</li>
-              <li>Домашний уход</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <div class="service-card__icon">🩺</div>
-            <h3>Дерматология</h3>
-            <p>Консультации дерматокосметологов и решение проблем кожи с медицинской точностью.</p>
-            <ul>
-              <li>Дерматовенеролог</li>
-              <li>Диагностика кожи</li>
-              <li>Лечебные протоколы</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <div class="service-card__icon">💎</div>
-            <h3>Эстетические процедуры</h3>
-            <p>Аккуратные эстетические услуги в комфортной атмосфере клиники.</p>
-            <ul>
-              <li>Прокол ушей / хеликс</li>
-              <li>Стерильность</li>
-              <li>Забота о деталях</li>
-            </ul>
-          </article>
-        </div>
+        <ul class="features__list">
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 36V20h6v16H8zm13 0V12h6v24h-6zm13 0V24h6v12h-6z" fill="currentColor"/><path d="M6 38h36" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <h3>Омӯзиши бозорҳо</h3>
+          </li>
+          <li class="feature reveal delay-1">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="18" cy="16" r="5" stroke="currentColor" stroke-width="2.2"/><circle cx="30" cy="16" r="5" stroke="currentColor" stroke-width="2.2"/><path d="M8 36c2-6 6-9 10-9s8 3 10 9M20 36c2-6 6-9 10-9s8 3 10 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Нетворкинг ва партнёрӣ</h3>
+          </li>
+          <li class="feature reveal delay-2">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 8c1 6 4 10 8 12-4 2-7 6-8 12-1-6-4-10-8-12 4-2 7-6 8-12z" stroke="currentColor" stroke-width="2.2"/><circle cx="24" cy="36" r="3" fill="currentColor"/></svg>
+            </span>
+            <h3>Идеяҳои нав барои бизнес</h3>
+          </li>
+          <li class="feature reveal delay-3">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2.2"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4M12.5 12.5l2.8 2.8M32.7 32.7l2.8 2.8M35.5 12.5l-2.8 2.8M15.3 32.7l-2.8 2.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Сафар ба таҷрибаи амалӣ</h3>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section section--alt" id="about">
-      <div class="container about">
-        <div class="about__visual">
-          <div class="about__frame">
-            <img src="assets/clinic/interior.jpg" alt="Интерьер Лазерной клиники" class="about__photo" />
-            <div class="about__overlay">
-              <img src="assets/logo/logo.png" alt="" class="about__badge-logo" width="64" height="64" />
-              <p class="about__quote">«Предлагаем только то, что нужно вашей коже — ничего лишнего.»</p>
-            </div>
-          </div>
-        </div>
-        <div class="about__content">
-          <p class="eyebrow">О нас</p>
-          <h2>Клиника, куда возвращаются</h2>
-          <p>
-            <strong>Лазерная клиника</strong> — пространство красоты и заботы в Душанбе.
-            Здесь вас встречают внимательные администраторы, чай и тёплая атмосфера,
-            а процедуры проводят опытные врачи-дерматокосметологи.
-          </p>
-          <p>
-            Мы сочетаем современное лазерное оборудование, медицинский подход
-            и индивидуальный подбор процедур — чтобы результат был заметным,
-            а визит — комфортным.
-          </p>
-          <div class="about__gallery">
-            <img src="assets/clinic/logo-wall.jpg" alt="Логотип клиники" />
-            <img src="assets/team/team-stairs.jpg" alt="Команда Лазерной клиники" />
-            <img src="assets/clinic/sign.jpg" alt="Вывеска Лазерной клиники" />
-          </div>
-          <div class="about__points">
-            <div class="point">
-              <strong>Комфорт</strong>
-              <span>Уютный интерьер и заботливый сервис</span>
-            </div>
-            <div class="point">
-              <strong>Профессионализм</strong>
-              <span>Врачи с медицинской квалификацией</span>
-            </div>
-            <div class="point">
-              <strong>Честность</strong>
-              <span>Только нужные процедуры, без навязывания</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Doctors -->
-    <section class="section" id="doctors">
+    <section class="section route" id="route">
       <div class="container">
-        <div class="section__head">
-          <p class="eyebrow">Команда</p>
-          <h2>Врачи и специалисты</h2>
-          <p class="section__desc">Пациенты особенно отмечают внимательность и профессионализм наших докторов.</p>
+        <div class="section__head reveal">
+          <p class="eyebrow">Маршрут</p>
+          <h2>Панҷ кишвар · як ҳадаф</h2>
+          <p class="section__desc">Аз Тошканд то Хошимин — бозорҳо, шабакаҳо ва таҷрибаи амалӣ дар 21 рӯз.</p>
         </div>
-        <div class="team-banner">
-          <img src="assets/team/team-reception.jpg" alt="Команда на ресепшене" />
-        </div>
-        <div class="doctors-grid">
-          <article class="doctor-card">
-            <img class="doctor-card__photo" src="assets/team/staff-madina.jpg" alt="Доктор Мадина" />
-            <h3>Доктор Мадина</h3>
-            <p class="doctor-card__role">Дерматокосметолог</p>
-            <p>Инъекционная и уходовая косметология. Пациенты ценят точные рекомендации и бережный подход.</p>
-          </article>
-          <article class="doctor-card">
-            <img class="doctor-card__photo" src="assets/team/staff-jamiya.jpg" alt="Джамиля Низомитдиновна" />
-            <h3>Джамиля Низомитдиновна</h3>
-            <p class="doctor-card__role">Врач-косметолог</p>
-            <p>Лазерные и эстетические процедуры. Высокая квалификация и аккуратная работа.</p>
-          </article>
-          <article class="doctor-card">
-            <img class="doctor-card__photo" src="assets/team/staff-shahnoza.jpg" alt="Доктор Шахноза" />
-            <h3>Доктор Шахноза</h3>
-            <p class="doctor-card__role">Дерматокосметолог</p>
-            <p>Индивидуальный подбор ухода и процедур под задачи кожи пациента.</p>
-          </article>
-          <article class="doctor-card">
-            <img class="doctor-card__photo" src="assets/team/staff-sabohat.jpg" alt="Сабохат" />
-            <h3>Сабохат</h3>
-            <p class="doctor-card__role">Администратор</p>
-            <p>Тёплая встреча, запись на удобное время и забота о каждом госте клиники.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why us -->
-    <section class="section section--dark" id="advantages">
-      <div class="container">
-        <div class="section__head section__head--light">
-          <p class="eyebrow">Почему мы</p>
-          <h2>Преимущества Лазерной клиники</h2>
-        </div>
-        <div class="advantages">
-          <div class="advantage">
-            <span class="advantage__num">01</span>
-            <h3>Медицинский подход</h3>
-            <p>Процедуры выполняют врачи — с диагностикой и безопасными протоколами.</p>
-          </div>
-          <div class="advantage">
-            <span class="advantage__num">02</span>
-            <h3>Современные технологии</h3>
-            <p>Лазерная эпиляция и косметология на оборудовании нового поколения.</p>
-          </div>
-          <div class="advantage">
-            <span class="advantage__num">03</span>
-            <h3>Атмосфера заботы</h3>
-            <p>Чистый уютный кабинет, внимательный персонал и комфорт на каждом этапе.</p>
-          </div>
-          <div class="advantage">
-            <span class="advantage__num">04</span>
-            <h3>Результат и доверие</h3>
-            <p>Высокий рейтинг и рекомендации клиентов — наша лучшая визитка.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="section" id="reviews">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow">Отзывы</p>
-          <h2>Что говорят пациенты</h2>
-          <p class="section__desc">Реальные впечатления гостей клиники.</p>
-        </div>
-        <div class="reviews-slider" id="reviewsSlider">
-          <article class="review-card is-active">
-            <div class="review-card__stars">★★★★★</div>
-            <p>«Процедура биоревитализации прошла быстро, безболезненно и профессионально. Доктор Мадина предлагает только то, что нужно — ничего лишнего. Лучшая клиника в Душанбе!»</p>
-            <footer>
-              <strong>Эдуард Цой</strong>
-              <span>Яндекс Карты</span>
-            </footer>
-          </article>
-          <article class="review-card">
-            <div class="review-card__stars">★★★★★</div>
-            <p>«Особенная благодарность Джамиле Низомитдиновне и доктору Мадине. Удаление перманента и жёлтый пилинг — супер результат. Если хочешь быть принцессой — приходи в Лазерную клинику.»</p>
-            <footer>
-              <strong>Мирзода Роксана</strong>
-              <span>Отзыв клиента</span>
-            </footer>
-          </article>
-          <article class="review-card">
-            <div class="review-card__stars">★★★★★</div>
-            <p>«Я иностранец и нашёл клинику в Instagram. Здесь говорят по-английски, ответили на все вопросы. Очень добрая команда — обязательно вернусь на процедуры по постакне.»</p>
-            <footer>
-              <strong>Гость клиники</strong>
-              <span>Instagram</span>
-            </footer>
-          </article>
-          <article class="review-card">
-            <div class="review-card__stars">★★★★★</div>
-            <p>«Пришла на прокол хеликс — клиника чистая и располагающая. Апи Джамила прекрасный специалист: сделала всё за пару минут, безболезненно. В восторге!»</p>
-            <footer>
-              <strong>Табассум Батырова</strong>
-              <span>Яндекс Карты</span>
-            </footer>
-          </article>
-        </div>
-        <div class="reviews-controls">
-          <button class="reviews-btn" id="prevReview" aria-label="Предыдущий отзыв">‹</button>
-          <div class="reviews-dots" id="reviewsDots"></div>
-          <button class="reviews-btn" id="nextReview" aria-label="Следующий отзыв">›</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Booking -->
-    <section class="section section--alt" id="booking">
-      <div class="container booking">
-        <div class="booking__info">
-          <p class="eyebrow">Запись</p>
-          <h2>Запишитесь на консультацию</h2>
-          <p>Оставьте заявку — мы перезвоним и подберём удобное время. Или напишите нам в Instagram / WhatsApp.</p>
-          <ul class="booking__contacts">
-            <li>
-              <span>Телефон</span>
-              <a href="tel:+992777112355">+992 777 112 355</a>
-            </li>
-            <li>
-              <span>Instagram</span>
-              <a href="https://www.instagram.com/lasernaya_clinica" target="_blank" rel="noopener">@lasernaya_clinica</a>
-            </li>
-            <li>
-              <span>Адрес</span>
-              <a href="https://yandex.tj/maps/org/lazernaya_klinika/71500302886/" target="_blank" rel="noopener">Дехи Боло, 185, Душанбе</a>
-            </li>
-            <li>
-              <span>Часы работы</span>
-              <strong>ежедневно 09:00–19:00</strong>
-            </li>
-          </ul>
-        </div>
-        <form class="booking-form" id="bookingForm">
-          <div class="form-row">
-            <label for="name">Имя</label>
-            <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required />
-          </div>
-          <div class="form-row">
-            <label for="phone">Телефон</label>
-            <input type="tel" id="phone" name="phone" placeholder="+992 __ ___ __ __" required />
-          </div>
-          <div class="form-row">
-            <label for="service">Услуга</label>
-            <select id="service" name="service" required>
-              <option value="">Выберите услугу</option>
-              <option>Лазерная эпиляция</option>
-              <option>Лазерная косметология</option>
-              <option>Биоревитализация</option>
-              <option>Чистка / пилинг</option>
-              <option>Консультация дерматолога</option>
-              <option>Другое</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="message">Комментарий</label>
-            <textarea id="message" name="message" rows="3" placeholder="Удобное время или пожелания"></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--lg btn--full">Отправить заявку</button>
-          <p class="form-note">Нажимая кнопку, вы соглашаетесь на обратный звонок по указанному номеру.</p>
-          <div class="form-success" id="formSuccess" hidden>
-            Спасибо! Заявка принята. Мы свяжемся с вами в ближайшее время.
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Contacts / map -->
-    <section class="section" id="contacts">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow">Контакты</p>
-          <h2>Как нас найти</h2>
-        </div>
-        <div class="contacts">
-          <div class="contacts__card">
-            <h3>Лазерная клиника</h3>
-            <p>Душанбе, район Сино<br />махалла Дехи Боло, 185<br />1 этаж</p>
-            <p><a href="tel:+992777112355">+992 777 112 355</a></p>
-            <p><a href="https://www.instagram.com/lasernaya_clinica" target="_blank" rel="noopener">Instagram @lasernaya_clinica</a></p>
-            <div class="contacts__actions">
-              <a class="btn btn--primary" href="https://yandex.tj/maps/org/lazernaya_klinika/71500302886/" target="_blank" rel="noopener">Открыть на карте</a>
-              <a class="btn btn--ghost" href="https://wa.me/992777112355" target="_blank" rel="noopener">WhatsApp</a>
+        <ol class="route__list">
+          <li class="route__item reveal" style="--i:0">
+            <img src="assets/cities/tashkent.jpg" alt="Тошканд" />
+            <div>
+              <span class="route__num">01</span>
+              <h3>Ӯзбекистон</h3>
+              <p>Тошканд</p>
             </div>
-          </div>
-          <div class="contacts__map">
-            <iframe
-              title="Карта — Лазерная клиника Душанбе"
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A&amp;ll=68.7879%2C38.5598&amp;z=16&amp;pt=68.7879,38.5598,pm2rdm&amp;lang=ru_RU"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
-          </div>
+          </li>
+          <li class="route__item reveal delay-1" style="--i:1">
+            <img src="assets/cities/kualalumpur.jpg" alt="Куала Лумпур" />
+            <div>
+              <span class="route__num">02</span>
+              <h3>Малайзия</h3>
+              <p>Куала Лумпур</p>
+            </div>
+          </li>
+          <li class="route__item reveal delay-2" style="--i:2">
+            <img src="assets/cities/bali.jpg" alt="Бали" />
+            <div>
+              <span class="route__num">03</span>
+              <h3>Индонезия</h3>
+              <p>Бали</p>
+            </div>
+          </li>
+          <li class="route__item reveal delay-3" style="--i:3">
+            <img src="assets/cities/singapore.jpg" alt="Сингапур" />
+            <div>
+              <span class="route__num">04</span>
+              <h3>Сингапур</h3>
+              <p>Сингапур</p>
+            </div>
+          </li>
+          <li class="route__item reveal delay-4" style="--i:4">
+            <img src="assets/cities/hochiminh.jpg" alt="Хошимин" />
+            <div>
+              <span class="route__num">05</span>
+              <h3>Ветнам</h3>
+              <p>Хошимин</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta" id="register">
+      <div class="container cta__bar reveal">
+        <div class="cta__meta">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>25 ноябр — 15 декабр 2026</span>
+        </div>
+        <a class="btn btn--primary btn--cta" href="https://instagram.com/yadgarov_dev" target="_blank" rel="noopener noreferrer">
+          Барои иштирок сабти ном намоед
+          <svg class="btn__plane" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+        </a>
+        <div class="cta__meta">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="3.2" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c1.2-3.2 3.4-4.8 5.5-4.8S13.3 15.8 14.5 19M12.5 19c.8-2.4 2.3-3.6 3.8-3.6s2.8 1.1 3.5 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Маҳдуд: 50 соҳибкор</span>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
+    <div class="footer__leaves" aria-hidden="true"></div>
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <img class="logo__img" src="assets/logo/logo.png" width="42" height="42" alt="Лазерная клиника" />
-        <div>
-          <strong>Лазерная клиника</strong>
-          <p>Лазерная эпиляция и косметология в Душанбе</p>
-        </div>
-      </div>
-      <div class="footer__links">
-        <a href="#services">Услуги</a>
-        <a href="#about">О клинике</a>
-        <a href="#booking">Запись</a>
-        <a href="https://www.instagram.com/lasernaya_clinica" target="_blank" rel="noopener">Instagram</a>
-      </div>
-      <p class="footer__copy">© <span id="year"></span> Лазерная клиника. Все права защищены.</p>
+      <p class="footer__slogan">ПАНҶ КИШВАР · ЯК ҲАДАФ · РУШДИ БИЗНЕСИ ШУМО</p>
+      <a class="footer__ig" href="https://instagram.com/yadgarov_dev" target="_blank" rel="noopener noreferrer">@yadgarov_dev</a>
     </div>
   </footer>
-
-  <a href="https://wa.me/992777112355" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.1 3C9.4 3 4 8.4 4 15.1c0 2.1.6 4.2 1.6 6L4 29l8.1-1.6c1.7.9 3.7 1.4 5.7 1.4 6.7 0 12.1-5.4 12.1-12.1S22.8 3 16.1 3zm0 22.1c-1.8 0-3.5-.5-5-1.3l-.4-.2-4.8 1 1-4.7-.2-.4c-.9-1.5-1.4-3.3-1.4-5.1 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10.7-9.2 10.7zm5.5-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6 0-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.7.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.2-.2-.3-.5-.4z"/></svg>
-  </a>
 
   <script src="js/main.js"></script>
 </body>
