@@ -19,9 +19,9 @@
     <div class="topbar__inner">
       <a class="topbar__brand" href="#hero">BUSINESS <span>CAMP</span></a>
       <nav class="topbar__nav">
+        <a href="#city-slider">Шаҳрҳо</a>
         <a href="#route">Маршрут</a>
-        <a href="#cities">Шаҳрҳо</a>
-        <a href="#features">Имкониятҳо</a>
+        <a href="#cities">Гостеприимство</a>
         <a href="#register" class="topbar__cta">Сабти ном</a>
       </nav>
       <a class="topbar__ig" href="https://instagram.com/yadgarov_dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -83,7 +83,89 @@
         </g>
       </svg>
 
-      <a class="hero__scroll" href="#route" aria-label="Поён"><span></span></a>
+      <a class="hero__scroll" href="#city-slider" aria-label="Поён"><span></span></a>
+    </section>
+
+    <section class="city-slider" id="city-slider" aria-roledescription="carousel" aria-label="Слайдери шаҳрҳо">
+      <div class="city-slider__viewport">
+        <div class="city-slider__track" id="citySliderTrack">
+          <article class="city-slide is-active" data-index="0">
+            <img src="assets/cities/tashkent.jpg" alt="Тошканд" />
+            <div class="city-slide__veil"></div>
+            <div class="city-slide__content">
+              <span class="city-slide__num">01 / 05</span>
+              <p class="city-slide__country">Ӯзбекистон</p>
+              <h2>Тошканд</h2>
+              <p>Оғози сафар · IT-хаб · бозорҳои Осиёи Марказӣ</p>
+              <a class="btn btn--primary" href="#city-tashkent">Муфассалтар</a>
+            </div>
+          </article>
+          <article class="city-slide" data-index="1">
+            <img src="assets/cities/kualalumpur.jpg" alt="Куала Лумпур" />
+            <div class="city-slide__veil"></div>
+            <div class="city-slide__content">
+              <span class="city-slide__num">02 / 05</span>
+              <p class="city-slide__country">Малайзия</p>
+              <h2>Куала Лумпур</h2>
+              <p>Молия · стартапҳо · networking дар KLCC</p>
+              <a class="btn btn--primary" href="#city-kl">Муфассалтар</a>
+            </div>
+          </article>
+          <article class="city-slide" data-index="2">
+            <img src="assets/cities/phuquoc.jpg" alt="Фукок" />
+            <div class="city-slide__veil"></div>
+            <div class="city-slide__content">
+              <span class="city-slide__num">03 / 05</span>
+              <p class="city-slide__country">Ветнам</p>
+              <h2>Фукок</h2>
+              <p>Ҷазира · resort hospitality · баҳр</p>
+              <a class="btn btn--primary" href="#city-phuquoc">Муфассалтар</a>
+            </div>
+          </article>
+          <article class="city-slide" data-index="3">
+            <img src="assets/cities/singapore.jpg" alt="Сингапур" />
+            <div class="city-slide__veil"></div>
+            <div class="city-slide__content">
+              <span class="city-slide__num">04 / 05</span>
+              <p class="city-slide__country">Сингапур</p>
+              <h2>Сингапур</h2>
+              <p>Fintech · logistics · глобалӣ стандарт</p>
+              <a class="btn btn--primary" href="#city-singapore">Муфассалтар</a>
+            </div>
+          </article>
+          <article class="city-slide" data-index="4">
+            <img src="assets/cities/bali.jpg" alt="Бали" />
+            <div class="city-slide__veil"></div>
+            <div class="city-slide__content">
+              <span class="city-slide__num">05 / 05</span>
+              <p class="city-slide__country">Индонезия</p>
+              <h2>Бали</h2>
+              <p>Хатми сафар · villa · farewell</p>
+              <a class="btn btn--primary" href="#city-bali">Муфассалтар</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="city-slider__ui">
+        <div class="city-slider__progress" aria-hidden="true"><i id="citySliderProgress"></i></div>
+        <div class="city-slider__controls">
+          <button type="button" class="city-slider__btn" id="citySliderPrev" aria-label="Қаблӣ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="city-slider__dots" id="citySliderDots" role="tablist" aria-label="Шаҳрҳо"></div>
+          <button type="button" class="city-slider__btn" id="citySliderNext" aria-label="Баъдӣ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="city-slider__labels" id="citySliderLabels" aria-hidden="true">
+          <span>Тошканд</span>
+          <span>Куала Лумпур</span>
+          <span>Фукок</span>
+          <span>Сингапур</span>
+          <span>Бали</span>
+        </div>
+      </div>
     </section>
 
     <section class="section route" id="route">
