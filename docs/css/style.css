@@ -96,7 +96,7 @@ p { margin: 0; }
 }
 .topbar__ig:hover { color: var(--lime); border-color: var(--lime); }
 
-/* Hero */
+/* Hero — creative destination mosaic */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -106,43 +106,51 @@ p { margin: 0; }
   isolation: isolate;
   overflow: hidden;
 }
-.hero__media { position: absolute; inset: 0; z-index: 0; }
-.hero__bg {
+.hero__mosaic {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 1.4fr;
+  grid-template-rows: 1.15fr 0.95fr;
+  gap: 0.45rem;
+  padding: 0.45rem;
+}
+.hero__tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  animation: tileIn 1s var(--ease) both;
+  animation-delay: calc(var(--i) * 0.07s);
+}
+.hero__tile--wide {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+.hero__tile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
   transform: scale(1.08);
-  animation: kenBurns 18s ease-in-out infinite alternate;
-  filter: saturate(1.05) contrast(1.05);
+  transition: transform 1.1s var(--ease);
+  filter: saturate(1.08) contrast(1.05);
 }
-.hero__strips {
+.hero__tile:hover img { transform: scale(1.16); }
+.hero__tile::after {
+  content: "";
   position: absolute;
   inset: 0;
-  display: none;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.35rem;
-  opacity: 0.55;
-  mix-blend-mode: soft-light;
-}
-.hero__strips span {
-  background-image: var(--img);
-  background-size: cover;
-  background-position: center;
-  clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%);
-  animation: stripIn 1s var(--ease) both;
-  animation-delay: calc(var(--i) * 0.08s);
-}
-@media (min-width: 900px) {
-  .hero__strips { display: grid; }
+  background: linear-gradient(180deg, transparent 50%, rgba(2, 20, 14, 0.35));
+  pointer-events: none;
 }
 .hero__veil {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(2, 20, 14, 0.55) 0%, rgba(2, 20, 14, 0.25) 35%, rgba(2, 20, 14, 0.75) 70%, rgba(2, 20, 14, 0.96) 100%),
-    linear-gradient(90deg, rgba(2, 20, 14, 0.55), transparent 45%);
+    linear-gradient(180deg, rgba(2, 20, 14, 0.55) 0%, rgba(2, 20, 14, 0.15) 32%, rgba(2, 20, 14, 0.55) 62%, rgba(2, 20, 14, 0.94) 100%),
+    linear-gradient(90deg, rgba(2, 20, 14, 0.72) 0%, rgba(2, 20, 14, 0.25) 42%, transparent 70%);
+  pointer-events: none;
 }
 .hero__content {
   position: relative;
@@ -464,12 +472,8 @@ p { margin: 0; }
 .delay-3 { transition-delay: 0.26s; }
 .delay-4 { transition-delay: 0.34s; }
 
-@keyframes kenBurns {
-  from { transform: scale(1.08) translate3d(0, 0, 0); }
-  to { transform: scale(1.16) translate3d(-1.5%, -1%, 0); }
-}
-@keyframes stripIn {
-  from { opacity: 0; transform: translateY(24px); }
+@keyframes tileIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.96); }
   to { opacity: 1; transform: none; }
 }
 @keyframes dash { to { stroke-dashoffset: -140; } }
@@ -488,17 +492,53 @@ p { margin: 0; }
   100% { transform: translateY(12px); opacity: 0; }
 }
 
+@media (max-width: 900px) {
+  .hero__mosaic {
+    display: block;
+    padding: 0;
+  }
+  .hero__tile {
+    display: none;
+    border-radius: 0;
+    animation: none;
+  }
+  .hero__tile--wide {
+    display: block;
+    position: absolute;
+    inset: 0;
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .hero__tile--wide img {
+    animation: mosaicPulse 14s ease-in-out infinite alternate;
+  }
+  .hero__veil {
+    background:
+      linear-gradient(180deg, rgba(2, 20, 14, 0.5) 0%, rgba(2, 20, 14, 0.2) 30%, rgba(2, 20, 14, 0.7) 65%, rgba(2, 20, 14, 0.95) 100%);
+  }
+}
+
+@keyframes mosaicPulse {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.14) translate3d(-1%, -1%, 0); }
+}
+
 @media (max-width: 720px) {
   .topbar__nav { display: none; }
   .hero__flight { display: none; }
   .hero { padding-top: 5.5rem; }
+  .hero__mosaic {
+    gap: 0.35rem;
+    padding: 0.35rem;
+  }
+  .hero__tile { border-radius: 0.75rem; }
   .cta__panel { flex-direction: column; align-items: stretch; text-align: left; }
   .btn--lg { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal, .hero__bg, .hero__path, .hero__plane, .btn--glow, .hero__scroll span, .hero__strips span {
+  .reveal, .hero__path, .hero__plane, .btn--glow, .hero__scroll span, .hero__tile {
     animation: none !important;
     transition: none !important;
   }

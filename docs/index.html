@@ -35,14 +35,24 @@
 
   <main>
     <section class="hero" id="hero">
-      <div class="hero__media" aria-hidden="true">
-        <img class="hero__bg" src="assets/camp/hero-bg.jpg" alt="" />
-        <div class="hero__strips">
-          <span style="--i:0; --img:url('assets/cities/tashkent.jpg')"></span>
-          <span style="--i:1; --img:url('assets/cities/kualalumpur.jpg')"></span>
-          <span style="--i:2; --img:url('assets/cities/bali.jpg')"></span>
-          <span style="--i:3; --img:url('assets/cities/singapore.jpg')"></span>
-          <span style="--i:4; --img:url('assets/cities/hochiminh.jpg')"></span>
+      <div class="hero__mosaic" aria-hidden="true">
+        <div class="hero__tile" style="--i:0">
+          <img src="assets/cities/tashkent.jpg" alt="" />
+        </div>
+        <div class="hero__tile" style="--i:1">
+          <img src="assets/cities/kualalumpur.jpg" alt="" />
+        </div>
+        <div class="hero__tile hero__tile--wide" style="--i:2">
+          <img src="assets/camp/hero-bg.jpg" alt="" />
+        </div>
+        <div class="hero__tile" style="--i:3">
+          <img src="assets/cities/bali.jpg" alt="" />
+        </div>
+        <div class="hero__tile" style="--i:4">
+          <img src="assets/cities/singapore.jpg" alt="" />
+        </div>
+        <div class="hero__tile" style="--i:5">
+          <img src="assets/cities/hochiminh.jpg" alt="" />
         </div>
       </div>
       <div class="hero__veil"></div>
@@ -72,9 +82,7 @@
         </g>
       </svg>
 
-      <a class="hero__scroll" href="#route" aria-label="Поён">
-        <span></span>
-      </a>
+      <a class="hero__scroll" href="#route" aria-label="Поён"><span></span></a>
     </section>
 
     <section class="section route" id="route">
@@ -82,16 +90,16 @@
         <div class="section__head reveal">
           <p class="eyebrow">Маршрут</p>
           <h2>Панҷ кишвар · як ҳадаф</h2>
-          <p class="section__desc">Аз Тошканд то Хошимин — бозорҳо, шабакаҳо ва таҷрибаи амалӣ дар 21 рӯз.</p>
+          <p class="section__desc">Аз Самарқанд то Хошимин — бозорҳо, шабакаҳо ва таҷрибаи амалӣ дар 21 рӯз.</p>
         </div>
       </div>
       <div class="route__track">
         <article class="route__card reveal" data-parallax>
-          <img src="assets/cities/tashkent.jpg" alt="Тошканд" loading="lazy" />
+          <img src="assets/cities/tashkent.jpg" alt="Самарқанд, Ӯзбекистон" loading="lazy" />
           <div class="route__info">
             <span>01</span>
             <h3>Ӯзбекистон</h3>
-            <p>Тошканд</p>
+            <p>Самарқанд</p>
           </div>
         </article>
         <article class="route__card reveal delay-1" data-parallax>
