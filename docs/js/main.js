@@ -47,6 +47,95 @@
     );
   }
 
+  // Hero city background slider
+  const hero = document.getElementById("hero");
+  if (hero) {
+    const slides = Array.from(hero.querySelectorAll(".hero__slide"));
+    const dotsWrap = document.getElementById("heroDots");
+    const progress = document.getElementById("heroProgress");
+    const progressBar = progress && progress.parentElement;
+    const prevBtn = document.getElementById("heroPrev");
+    const nextBtn = document.getElementById("heroNext");
+    const cityNum = document.getElementById("heroCityNum");
+    const cityName = document.getElementById("heroCityName");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let timer = null;
+    const INTERVAL = 5500;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "hero__dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("aria-label", `Слайд ${i + 1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.querySelectorAll(".hero__dot"));
+
+    const restartProgress = () => {
+      if (!progressBar || !progress || reduceMotion) return;
+      progressBar.classList.remove("is-running");
+      void progressBar.offsetWidth;
+      progressBar.classList.add("is-running");
+    };
+
+    const goTo = (next) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+      dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+      const active = slides[index];
+      if (cityNum) {
+        cityNum.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+      }
+      if (cityName && active) {
+        cityName.textContent = `${active.dataset.city} · ${active.dataset.country}`;
+      }
+      restartProgress();
+      resetTimer();
+    };
+
+    const resetTimer = () => {
+      if (timer) clearInterval(timer);
+      if (reduceMotion) return;
+      timer = setInterval(() => goTo(index + 1), INTERVAL);
+    };
+
+    prevBtn && prevBtn.addEventListener("click", () => goTo(index - 1));
+    nextBtn && nextBtn.addEventListener("click", () => goTo(index + 1));
+
+    hero.addEventListener("mouseenter", () => {
+      if (timer) clearInterval(timer);
+      if (progressBar) progressBar.classList.remove("is-running");
+    });
+    hero.addEventListener("mouseleave", () => {
+      restartProgress();
+      resetTimer();
+    });
+
+    let touchX = null;
+    hero.addEventListener(
+      "touchstart",
+      (e) => {
+        touchX = e.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+    hero.addEventListener(
+      "touchend",
+      (e) => {
+        if (touchX == null) return;
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        touchX = null;
+      },
+      { passive: true }
+    );
+
+    restartProgress();
+    resetTimer();
+  }
+
   // City banner slider
   const slider = document.getElementById("city-slider");
   if (slider) {
