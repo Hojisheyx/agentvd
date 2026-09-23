@@ -130,4 +130,25 @@
     restartProgress();
     resetTimer();
   }
+
+  // City YouTube lite embeds — click to play
+  document.querySelectorAll(".yt-lite").forEach((wrap) => {
+    const hit = wrap.querySelector(".yt-lite__hit");
+    if (!hit) return;
+    hit.addEventListener("click", () => {
+      const id = wrap.getAttribute("data-yt");
+      if (!id || wrap.classList.contains("is-playing")) return;
+      const title = hit.getAttribute("aria-label") || "Video";
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.title = title;
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      wrap.classList.add("is-playing");
+      hit.replaceWith(iframe);
+    });
+  });
 })();
