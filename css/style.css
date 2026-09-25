@@ -720,7 +720,7 @@ p { margin: 0; }
   border-color: rgba(232, 212, 139, 0.65);
 }
 .mentor-card:nth-child(2) .mentor-card__photo img {
-  object-position: 70% 25%;
+  object-position: center 18%;
 }
 .mentor-card h3 {
   font-size: clamp(1.25rem, 2.5vw, 1.55rem);
