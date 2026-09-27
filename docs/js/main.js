@@ -151,27 +151,24 @@
     resetTimer();
   }
 
-  // City YouTube lite embeds — click to play
+  // YouTube 16:9 embeds — click thumbnail to play
   document.querySelectorAll(".yt-lite").forEach((wrap) => {
     const hit = wrap.querySelector(".yt-lite__hit");
     if (!hit) return;
     hit.addEventListener("click", () => {
       const id = wrap.getAttribute("data-yt");
       if (!id || wrap.classList.contains("is-playing")) return;
-      const title = hit.getAttribute("aria-label") || "Video";
+      const title = hit.getAttribute("aria-label") || "YouTube video";
       const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&hd=1`;
+      iframe.src =
+        `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=0&playsinline=1&hl=en`;
       iframe.title = title;
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
       iframe.loading = "lazy";
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
-      // Prefer crisp playback on large screens
-      iframe.style.width = "100%";
-      iframe.style.aspectRatio = "16 / 9";
-      iframe.style.border = "0";
-      iframe.style.borderRadius = "inherit";
+      iframe.setAttribute("frameborder", "0");
       wrap.classList.add("is-playing");
       hit.replaceWith(iframe);
     });
