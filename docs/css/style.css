@@ -543,6 +543,14 @@ p { margin: 0; }
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
+  .city__spots--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 980px) {
+  .city__spots--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .city__spot {
   margin: 0;
