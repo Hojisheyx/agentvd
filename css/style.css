@@ -377,12 +377,19 @@ p { margin: 0; }
     overflow: visible;
     padding-inline: max(1rem, calc((100% - 1120px) / 2));
   }
-  .route__card { grid-auto-columns: unset; }
+  .route__card {
+    grid-auto-columns: unset;
+    min-height: 300px;
+    aspect-ratio: 3 / 4;
+    max-height: none;
+  }
 }
 .route__card {
   position: relative;
   scroll-snap-align: start;
-  min-height: 340px;
+  min-height: 240px;
+  aspect-ratio: 3 / 4;
+  max-height: 320px;
   overflow: hidden;
   border-radius: 1.1rem;
   isolation: isolate;
@@ -466,14 +473,25 @@ p { margin: 0; }
 .city__media {
   position: relative;
   overflow: hidden;
-  border-radius: 1.25rem;
-  min-height: 260px;
+  border-radius: 1rem;
+  aspect-ratio: 16 / 10;
+  max-height: 240px;
+  background: #06281c;
+}
+@media (min-width: 860px) {
+  .city__media {
+    max-height: none;
+    aspect-ratio: 4 / 3;
+    min-height: 280px;
+  }
 }
 .city__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 280px;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.8s var(--ease);
 }
 .city__top:hover .city__media img { transform: scale(1.05); }
@@ -556,12 +574,20 @@ p { margin: 0; }
 }
 .city__spot > img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
+  max-height: 220px;
   object-fit: cover;
   object-position: center;
-  border-radius: 1.15rem;
+  border-radius: 0.9rem;
   background: #06281c;
   transition: transform 0.85s var(--ease);
+}
+@media (min-width: 700px) {
+  .city__spot > img {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+    border-radius: 1.15rem;
+  }
 }
 .city__spot:hover > img { transform: scale(1.025); }
 .city__spot figcaption {
@@ -592,17 +618,25 @@ p { margin: 0; }
 }
 .city__spot .yt-lite__hit,
 .city__spot .yt-lite.is-playing iframe {
-  border-radius: 0.95rem;
+  border-radius: 0.75rem;
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
   min-height: 0;
+  max-height: 180px;
+}
+@media (min-width: 700px) {
+  .city__spot .yt-lite__hit,
+  .city__spot .yt-lite.is-playing iframe {
+    max-height: none;
+    border-radius: 0.95rem;
+  }
 }
 .city__spot .yt-lite__hit img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0.95rem;
+  border-radius: inherit;
 }
 .city__videos {
   width: 100%;
