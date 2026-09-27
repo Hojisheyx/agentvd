@@ -722,6 +722,65 @@ p { margin: 0; }
 }
 .feature p { color: var(--muted); font-size: 0.95rem; }
 
+/* Program — Бе гарзи истирохат */
+.program {
+  background:
+    radial-gradient(680px 320px at 100% 0%, rgba(200, 255, 61, 0.07), transparent 55%),
+    linear-gradient(180deg, transparent, rgba(6, 40, 28, 0.55) 40%, transparent);
+}
+.program__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.program__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.1rem 1.35rem;
+  align-items: start;
+  padding: 1.55rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.35s var(--ease);
+}
+@media (min-width: 720px) {
+  .program__item {
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1.5rem 2rem;
+    padding: 1.85rem 0.35rem;
+    align-items: center;
+  }
+}
+.program__item:hover {
+  background: linear-gradient(90deg, rgba(200, 255, 61, 0.06), transparent 70%);
+}
+.program__num {
+  font-family: var(--font-d);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--lime);
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+.program__body {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 40rem;
+}
+.program__body h3 {
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.program__body p {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 34rem;
+}
+
 /* Mentors — editorial portraits */
 .mentors .section__head { margin-bottom: 2.75rem; }
 .mentors__list {
