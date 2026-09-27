@@ -1,20 +1,26 @@
 (() => {
-  document.documentElement.classList.add("js");
-
   const topbar = document.getElementById("topbar");
   const reveals = document.querySelectorAll(".reveal");
   const showAllReveals = () => {
     reveals.forEach((el) => el.classList.add("is-in"));
   };
+  const markVisibleReveals = () => {
+    const vh = window.innerHeight || 800;
+    reveals.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.95 && r.bottom > 0) el.classList.add("is-in");
+    });
+  };
+
+  // Opt into hide-until-reveal only after marking above-the-fold content
+  markVisibleReveals();
+  document.documentElement.classList.add("js");
 
   const onScroll = () => {
     if (topbar) topbar.classList.toggle("is-solid", window.scrollY > 24);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
-
-  // Always show above-the-fold hero copy immediately
-  document.querySelectorAll(".hero .reveal").forEach((el) => el.classList.add("is-in"));
 
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -154,13 +160,18 @@
       if (!id || wrap.classList.contains("is-playing")) return;
       const title = hit.getAttribute("aria-label") || "Video";
       const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&hd=1`;
       iframe.title = title;
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
       iframe.loading = "lazy";
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      // Prefer crisp playback on large screens
+      iframe.style.width = "100%";
+      iframe.style.aspectRatio = "16 / 9";
+      iframe.style.border = "0";
+      iframe.style.borderRadius = "inherit";
       wrap.classList.add("is-playing");
       hit.replaceWith(iframe);
     });

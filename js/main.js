@@ -160,13 +160,18 @@
       if (!id || wrap.classList.contains("is-playing")) return;
       const title = hit.getAttribute("aria-label") || "Video";
       const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&hd=1`;
       iframe.title = title;
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
       iframe.loading = "lazy";
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      // Prefer crisp playback on large screens
+      iframe.style.width = "100%";
+      iframe.style.aspectRatio = "16 / 9";
+      iframe.style.border = "0";
+      iframe.style.borderRadius = "inherit";
       wrap.classList.add("is-playing");
       hit.replaceWith(iframe);
     });
