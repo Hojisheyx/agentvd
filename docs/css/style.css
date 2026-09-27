@@ -554,16 +554,30 @@ p { margin: 0; }
   color: #dff59a;
   letter-spacing: 0.02em;
 }
+.city__spots-label {
+  font-family: var(--font-d);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin: 0.5rem 0 1rem;
+}
 .city__spots {
   display: grid;
   gap: 1.25rem;
   width: 100%;
+  margin-bottom: 1.75rem;
 }
+.city__spots:last-child { margin-bottom: 0; }
 @media (min-width: 700px) {
   .city__spots,
   .city__spots--4 {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+  }
+  .city__spots--3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .city__spot {
