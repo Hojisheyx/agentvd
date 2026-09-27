@@ -1,6 +1,20 @@
 (() => {
   const topbar = document.getElementById("topbar");
   const reveals = document.querySelectorAll(".reveal");
+  const showAllReveals = () => {
+    reveals.forEach((el) => el.classList.add("is-in"));
+  };
+  const markVisibleReveals = () => {
+    const vh = window.innerHeight || 800;
+    reveals.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.95 && r.bottom > 0) el.classList.add("is-in");
+    });
+  };
+
+  // Opt into hide-until-reveal only after marking above-the-fold content
+  markVisibleReveals();
+  document.documentElement.classList.add("js");
 
   const onScroll = () => {
     if (topbar) topbar.classList.toggle("is-solid", window.scrollY > 24);
@@ -18,16 +32,17 @@
           }
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
     );
-    reveals.forEach((el) => io.observe(el));
+    reveals.forEach((el) => {
+      if (!el.classList.contains("is-in")) io.observe(el);
+    });
   } else {
-    reveals.forEach((el) => el.classList.add("is-in"));
+    showAllReveals();
   }
 
-  requestAnimationFrame(() => {
-    document.querySelectorAll(".hero .reveal").forEach((el) => el.classList.add("is-in"));
-  });
+  // Safety net: never leave content invisible if observer misses
+  window.setTimeout(showAllReveals, 1800);
 
   // Soft parallax on route images
   const cards = document.querySelectorAll("[data-parallax] img");
