@@ -93,6 +93,37 @@ a:hover { color: var(--blue); }
   opacity: 0.78;
 }
 .doc-date { margin: 0.25rem 0 0; font-weight: 600; }
+.doc-for {
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.party-role {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--blue-mid);
+}
+
+.parties-block h3 {
+  margin-bottom: 0.65rem;
+  font-size: 1.15rem;
+  color: var(--blue);
+}
+
+.parties-block--exec {
+  border-color: #bfdbfe;
+  background: linear-gradient(180deg, #eff6ff, #fff);
+}
+
+.cta-company {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
 
 .cover h1 {
   margin: 0 0 1rem;

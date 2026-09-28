@@ -1,9 +1,11 @@
 # КП — InnovaAuto Mobile (iOS & Android)
 
-Коммерческое предложение на разработку мобильного приложения для [inovaauto.com](https://inovaauto.com).
+Коммерческое предложение **IT-компании WebDushanbe** ([webdushanbe.tj](https://webdushanbe.tj)) на разработку мобильного приложения для [inovaauto.com](https://inovaauto.com).
 
 ## Параметры
 
+- **Исполнитель:** WebDushanbe
+- **Заказчик:** InnovaAuto
 - **Платформы:** iOS + Android (Flutter)
 - **Бюджет:** 90 000 с.
 - **Срок:** 1,5 месяца
@@ -16,5 +18,4 @@ python3 -m http.server 8080
 
 Открыть: http://localhost:8080
 
-Кнопка «Печать / PDF» в правом нижнем углу — сохранить как PDF.
-
+Кнопка «Печать / PDF» — сохранить как PDF.
