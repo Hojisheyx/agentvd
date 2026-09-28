@@ -587,9 +587,11 @@ p { margin: 0; }
   align-content: start;
 }
 .city__spot > img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  max-height: 220px;
+  max-height: none;
   object-fit: cover;
   object-position: center;
   border-radius: 0.9rem;
@@ -598,8 +600,7 @@ p { margin: 0; }
 }
 @media (min-width: 700px) {
   .city__spot > img {
-    aspect-ratio: 16 / 10;
-    max-height: none;
+    aspect-ratio: 16 / 9;
     border-radius: 1.15rem;
   }
 }
