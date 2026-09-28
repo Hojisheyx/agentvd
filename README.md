@@ -1,22 +1,21 @@
-# Лазерная клиника — сайт
+# КП — InnovaAuto Mobile (iOS & Android)
 
-## Рабочая ссылка
+Коммерческое предложение **IT-компании WebDushanbe** ([webdushanbe.tj](https://webdushanbe.tj)) на разработку мобильного приложения для [inovaauto.com](https://inovaauto.com).
 
-**https://lazernayaklinika.tiiny.site**
+## Параметры
 
-Резерв: https://eos-utc-mai-polls.trycloudflare.com
+- **Исполнитель:** WebDushanbe
+- **Заказчик:** InnovaAuto
+- **Платформы:** iOS + Android (Flutter)
+- **Бюджет:** 90 000 с.
+- **Срок:** 1,5 месяца
 
-## Постоянный хостинг (GitHub Pages)
-
-1. Откройте https://github.com/Hojisheyx/agentvd/settings/pages
-2. Source → Deploy from a branch
-3. Branch: `main`, folder: `/docs`
-4. Save
-
-После этого сайт будет на: https://hojisheyx.github.io/agentvd/
-
-## Локальный запуск
+## Локальный просмотр
 
 ```bash
 python3 -m http.server 8080
 ```
+
+Открыть: http://localhost:8080
+
+Кнопка «Печать / PDF» — сохранить как PDF.
