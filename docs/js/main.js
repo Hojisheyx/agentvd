@@ -173,4 +173,43 @@
       hit.replaceWith(iframe);
     });
   });
+
+  // Background music — start after first user gesture (browser policy)
+  const audio = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicToggle");
+  if (audio && musicBtn) {
+    audio.volume = 0.35;
+    const KEY = "bc-music-on";
+    const preferOn = localStorage.getItem(KEY) !== "0";
+
+    const setPlaying = (on) => {
+      musicBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      musicBtn.setAttribute("aria-label", on ? "Хомӯш кардани музика" : "Фаъол кардани музика");
+      localStorage.setItem(KEY, on ? "1" : "0");
+    };
+
+    const play = () =>
+      audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+
+    const pause = () => {
+      audio.pause();
+      setPlaying(false);
+    };
+
+    musicBtn.addEventListener("click", () => {
+      if (audio.paused) play();
+      else pause();
+    });
+
+    // Auto-start once on first click/tap anywhere if user hasn't opted out
+    if (preferOn) {
+      const unlock = () => {
+        play();
+        window.removeEventListener("pointerdown", unlock);
+        window.removeEventListener("keydown", unlock);
+      };
+      window.addEventListener("pointerdown", unlock, { once: true, passive: true });
+      window.addEventListener("keydown", unlock, { once: true });
+    }
+  }
 })();

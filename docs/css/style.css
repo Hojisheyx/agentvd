@@ -95,6 +95,31 @@ p { margin: 0; }
   transition: color 0.2s, border-color 0.2s;
 }
 .topbar__ig:hover { color: var(--lime); border-color: var(--lime); }
+.topbar__music {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.topbar__music:hover,
+.topbar__music[aria-pressed="true"] {
+  color: var(--lime);
+  border-color: var(--lime);
+}
+.topbar__music[aria-pressed="true"] {
+  background: rgba(200, 255, 61, 0.12);
+  box-shadow: 0 0 0 1px rgba(200, 255, 61, 0.25);
+}
+.topbar__music-on { display: none; }
+.topbar__music[aria-pressed="true"] .topbar__music-on { display: block; }
+.topbar__music[aria-pressed="true"] .topbar__music-off { display: none; }
 
 /* Hero — full-bleed city slider */
 .hero {
