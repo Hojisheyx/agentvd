@@ -177,6 +177,7 @@
   // Background music — start after first user gesture (browser policy)
   const audio = document.getElementById("bgMusic");
   const musicBtn = document.getElementById("musicToggle");
+  const musicWrap = document.querySelector(".topbar__music-wrap");
   if (audio && musicBtn) {
     audio.volume = 0.35;
     const KEY = "bc-music-on";
@@ -184,8 +185,16 @@
 
     const setPlaying = (on) => {
       musicBtn.setAttribute("aria-pressed", on ? "true" : "false");
-      musicBtn.setAttribute("aria-label", on ? "Хомӯш кардани музика" : "Фаъол кардани музика");
+      musicBtn.setAttribute(
+        "aria-label",
+        on ? "Хомӯш кардани овоз" : "Овозро шунавед"
+      );
+      musicBtn.setAttribute("title", on ? "Хомӯш кардан" : "Овозро шунавед");
       localStorage.setItem(KEY, on ? "1" : "0");
+      if (musicWrap) {
+        musicWrap.classList.toggle("is-playing", on);
+        musicWrap.classList.toggle("is-hint", !on);
+      }
     };
 
     const play = () =>
@@ -196,7 +205,11 @@
       setPlaying(false);
     };
 
-    musicBtn.addEventListener("click", () => {
+    // Show hint until music is on
+    if (musicWrap) musicWrap.classList.add("is-hint");
+
+    musicBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       if (audio.paused) play();
       else pause();
     });
@@ -210,6 +223,8 @@
       };
       window.addEventListener("pointerdown", unlock, { once: true, passive: true });
       window.addEventListener("keydown", unlock, { once: true });
+    } else if (musicWrap) {
+      musicWrap.classList.add("is-hint");
     }
   }
 })();
