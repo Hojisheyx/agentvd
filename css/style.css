@@ -1117,6 +1117,17 @@ p { margin: 0; }
 }
 .footer a { color: #d4b56a; font-family: var(--font-b); font-weight: 700; letter-spacing: 0; }
 .footer a:hover { color: var(--lime); }
+.footer__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.1rem;
+}
+.footer__phone,
+.footer__ig,
+.footer__wa {
+  font-size: 0.92rem;
+}
 
 /* Reveal — visible by default; only hide when JS opts in */
 .reveal {
