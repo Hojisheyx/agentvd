@@ -1129,6 +1129,83 @@ p { margin: 0; }
   font-size: 0.92rem;
 }
 
+/* Floating WhatsApp + Phone */
+.contact-fab {
+  position: fixed;
+  right: max(0.85rem, env(safe-area-inset-right));
+  bottom: max(1.1rem, env(safe-area-inset-bottom));
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  animation: fabIn 0.7s var(--ease) both;
+}
+.contact-fab__btn {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  color: #fff;
+  background: rgba(8, 14, 12, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: transform 0.25s var(--ease), border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+.contact-fab__btn::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--lime), transparent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 0.25s, transform 0.25s var(--ease);
+}
+.contact-fab__btn--wa {
+  animation: fabPulse 2.8s ease-in-out infinite;
+}
+.contact-fab__btn--tel::before {
+  opacity: 1;
+  transform: scaleX(1);
+  animation: fabLine 2.4s var(--ease) infinite;
+}
+.contact-fab__btn:hover,
+.contact-fab__btn:focus-visible {
+  transform: translateY(-2px) scale(1.05);
+  border-color: var(--lime);
+  background: rgba(10, 61, 46, 0.95);
+  box-shadow: 0 0 0 1px rgba(200, 255, 61, 0.35), 0 12px 32px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+.contact-fab__btn:hover::before,
+.contact-fab__btn:focus-visible::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.contact-fab__btn svg {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fabIn {
+  from { opacity: 0; transform: translateX(1.25rem); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fabPulse {
+  0%, 100% { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(200, 255, 61, 0.35); }
+  55% { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), 0 0 0 10px rgba(200, 255, 61, 0); }
+}
+@keyframes fabLine {
+  0%, 100% { opacity: 0.55; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.25); }
+}
+
 /* Reveal — visible by default; only hide when JS opts in */
 .reveal {
   opacity: 1;
@@ -1193,7 +1270,8 @@ html:not(.js) .reveal {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .hero__path, .hero__plane, .btn--glow,
-  .hero__slide, .hero__slide.is-active img, .hero__progress i {
+  .hero__slide, .hero__slide.is-active img, .hero__progress i,
+  .contact-fab, .contact-fab__btn, .contact-fab__btn--wa, .contact-fab__btn--tel::before {
     animation: none !important;
     transition: none !important;
   }
