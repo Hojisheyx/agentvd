@@ -1,22 +1,24 @@
-# Лазерная клиника — сайт
+# Business Camp
 
-## Рабочая ссылка
+Лендинг для Business Camp — саёҳат, бизнес ва истиқбол.
 
-**https://lazernayaklinika.tiiny.site**
+## Публичная ссылка (превью)
 
-Резерв: https://eos-utc-mai-polls.trycloudflare.com
+https://08ce1fd40531e8.lhr.life
 
-## Постоянный хостинг (GitHub Pages)
-
-1. Откройте https://github.com/Hojisheyx/agentvd/settings/pages
-2. Source → Deploy from a branch
-3. Branch: `main`, folder: `/docs`
-4. Save
-
-После этого сайт будет на: https://hojisheyx.github.io/agentvd/
+(временный туннель; если не открывается — напишите, подниму новую)
 
 ## Локальный запуск
 
 ```bash
 python3 -m http.server 8080
 ```
+
+Откройте http://localhost:8080
+
+## GitHub Pages
+
+Папка `docs/` — копия сайта для деплоя. После включения Pages в настройках репозитория
+(Settings → Pages → Source: GitHub Actions) сайт будет на:
+
+https://hojisheyx.github.io/agentvd/
